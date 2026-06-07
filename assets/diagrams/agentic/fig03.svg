@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg class="svg-fig" viewBox="0 0 820 330" role="img" aria-label="Data layer feeding AI" width="820" height="330"><style>
+<svg class="svg-fig" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 330" role="img" aria-label="Data layer feeding AI" width="820" height="330"><style>
 text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
 .s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
 .s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
