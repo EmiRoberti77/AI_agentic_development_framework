@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 330" role="img" aria-label="Data layer feeding AI" width="820" height="330"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="330" fill="#fdfcf8"/>
+  <rect x="8" y="8" width="804" height="314" rx="10" fill="#fdfcf8" stroke="#d8d3c4"/>
+  <!-- sources -->
+  <text x="40" y="34" class="s-cap">Sources</text>
+  <rect x="30" y="44" width="90" height="30" rx="5" class="s-box"/><text x="42" y="64" class="s-sub">SaaS APIs</text>
+  <rect x="30" y="82" width="90" height="30" rx="5" class="s-box"/><text x="42" y="102" class="s-sub">CDC / DB</text>
+  <rect x="30" y="120" width="90" height="30" rx="5" class="s-box"/><text x="42" y="140" class="s-sub">documents</text>
+  <rect x="30" y="158" width="90" height="30" rx="5" class="s-box"/><text x="42" y="178" class="s-sub">events / IoT</text>
+
+  <!-- medallion -->
+  <rect x="160" y="44" width="120" height="146" rx="6" fill="#f3ede2" stroke="#c9923a"/>
+  <text x="172" y="64" class="s-cap" fill="#9a7b25">Lakehouse</text>
+  <rect x="172" y="74" width="96" height="30" rx="4" fill="#efe3d0" stroke="#b08a3a"/><text x="184" y="93" class="s-sub">Bronze</text>
+  <rect x="172" y="110" width="96" height="30" rx="4" fill="#e7d6b8" stroke="#b08a3a"/><text x="184" y="129" class="s-sub">Silver</text>
+  <rect x="172" y="146" width="96" height="30" rx="4" fill="#dcc59a" stroke="#b08a3a"/><text x="184" y="165" class="s-sub">Gold</text>
+
+  <!-- semantic + feature -->
+  <rect x="320" y="44" width="150" height="64" rx="6" class="s-blue"/>
+  <text x="334" y="68" class="s-lbl" font-size="12">Semantic layer</text>
+  <text x="334" y="86" class="s-sub">metrics · dimensions</text>
+  <text x="334" y="100" class="s-sub">governed query API</text>
+
+  <rect x="320" y="124" width="150" height="66" rx="6" class="s-green"/>
+  <text x="334" y="148" class="s-lbl" font-size="12">Feature store</text>
+  <text x="334" y="166" class="s-sub">offline (training)</text>
+  <text x="334" y="180" class="s-sub">online (serving)</text>
+
+  <rect x="320" y="206" width="150" height="64" rx="6" class="s-gold"/>
+  <text x="334" y="230" class="s-lbl" font-size="12">Embedding pipeline</text>
+  <text x="334" y="248" class="s-sub">chunk · embed · index</text>
+  <text x="334" y="262" class="s-sub">→ vector / graph store</text>
+
+  <!-- AI consumers -->
+  <rect x="520" y="60" width="260" height="50" rx="6" class="s-box"/>
+  <text x="536" y="82" class="s-lbl">Analytics agent</text><text x="536" y="100" class="s-sub">calls semantic layer (no raw SQL)</text>
+  <rect x="520" y="124" width="260" height="50" rx="6" class="s-box"/>
+  <text x="536" y="146" class="s-lbl">ML model / ranker</text><text x="536" y="164" class="s-sub">reads features, consistent train/serve</text>
+  <rect x="520" y="206" width="260" height="50" rx="6" class="s-box"/>
+  <text x="536" y="228" class="s-lbl">RAG retriever</text><text x="536" y="246" class="s-sub">semantic search over indexed corpus</text>
+
+  <!-- arrows -->
+  <path d="M120 60 h36" class="s-edge"/><path d="M120 97 h36" class="s-edge"/><path d="M120 135 h36" class="s-edge"/><path d="M120 173 h36" class="s-edge-d"/>
+  <path d="M280 110 C 300 110, 300 76, 318 76" class="s-edge"/>
+  <path d="M280 160 h36" class="s-edge"/>
+  <path d="M280 176 C 300 200, 300 238, 318 238" class="s-edge-d"/>
+  <path d="M470 84 h48" class="s-edge"/>
+  <path d="M470 150 h48" class="s-edge"/>
+  <path d="M470 238 h48" class="s-edge"/>
+</svg>

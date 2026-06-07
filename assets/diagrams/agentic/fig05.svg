@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 300" role="img" aria-label="Vector retrieval versus graph retrieval" width="820" height="300"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="300" fill="#fdfcf8"/>
+  <rect x="8" y="8" width="804" height="284" rx="10" fill="#fdfcf8" stroke="#d8d3c4"/>
+  <!-- left vector -->
+  <text x="40" y="36" class="s-cap">Vector retrieval — similarity</text>
+  <circle cx="120" cy="150" r="8" fill="none" stroke="#8a3324" stroke-width="2"/><text x="100" y="180" class="s-sub" font-size="9">query</text>
+  <g fill="#2f6f93">
+   <circle cx="180" cy="110" r="6"/><circle cx="170" cy="170" r="6"/><circle cx="210" cy="150" r="6"/><circle cx="150" cy="110" r="6"/>
+  </g>
+  <circle cx="120" cy="150" r="74" fill="none" stroke="#8a3324" stroke-dasharray="4 4"/>
+  <text x="40" y="250" class="s-sub" font-size="10">returns the K nearest chunks — flat, unconnected.</text>
+  <text x="40" y="266" class="s-sub" font-size="10">great for: "find docs about X". weak on multi-hop.</text>
+
+  <!-- right graph -->
+  <text x="450" y="36" class="s-cap">Graph retrieval — connection</text>
+  <g class="s-edge">
+    <line x1="540" y1="90" x2="640" y2="120"/><line x1="640" y1="120" x2="600" y2="200"/>
+    <line x1="600" y1="200" x2="700" y2="180"/><line x1="540" y1="90" x2="600" y2="200"/>
+    <line x1="640" y1="120" x2="730" y2="90"/>
+  </g>
+  <g>
+    <circle cx="540" cy="90" r="16" class="s-blue"/><text x="540" y="94" text-anchor="middle" class="s-sub" font-size="9">Acme</text>
+    <circle cx="640" cy="120" r="16" class="s-ox"/><text x="640" y="124" text-anchor="middle" class="s-sub" font-size="9">Cust.</text>
+    <circle cx="600" cy="200" r="16" class="s-green"/><text x="600" y="204" text-anchor="middle" class="s-sub" font-size="9">Supp.</text>
+    <circle cx="700" cy="180" r="16" class="s-gold"/><text x="700" y="184" text-anchor="middle" class="s-sub" font-size="9">Comp.</text>
+    <circle cx="730" cy="90" r="16" class="s-box"/><text x="730" y="94" text-anchor="middle" class="s-sub" font-size="9">Mkt</text>
+  </g>
+  <text x="556" y="86" class="s-sub" font-size="8" fill="#8a3324">sells_to</text>
+  <text x="592" y="166" class="s-sub" font-size="8" fill="#8a3324">supplies</text>
+  <text x="640" y="196" class="s-sub" font-size="8" fill="#8a3324">competes</text>
+  <text x="450" y="250" class="s-sub" font-size="10">traverses typed edges — answers relational, multi-hop</text>
+  <text x="450" y="266" class="s-sub" font-size="10">"competitors that supply our top customer" = a graph walk</text>
+</svg>

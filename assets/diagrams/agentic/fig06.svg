@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 360" role="img" aria-label="RAG pipeline diagram" width="820" height="360"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="360" fill="#fdfcf8"/>
+  <rect x="8" y="8" width="804" height="344" rx="10" fill="#fdfcf8" stroke="#d8d3c4"/>
+  <!-- INGESTION lane -->
+  <text x="30" y="34" class="s-cap" fill="#9a7b25">Ingestion (offline / batch)</text>
+  <rect x="30" y="44" width="110" height="42" rx="6" class="s-gold"/><text x="42" y="62" class="s-sub">documents</text><text x="42" y="76" class="s-sub">(silver/gold)</text>
+  <rect x="160" y="44" width="100" height="42" rx="6" class="s-gold"/><text x="172" y="62" class="s-sub">chunk +</text><text x="172" y="76" class="s-sub">clean</text>
+  <rect x="280" y="44" width="100" height="42" rx="6" class="s-gold"/><text x="292" y="62" class="s-sub">embed</text><text x="292" y="76" class="s-sub">model</text>
+  <rect x="400" y="44" width="120" height="42" rx="6" class="s-blue"/><text x="412" y="62" class="s-sub">vector + graph</text><text x="412" y="76" class="s-sub">index</text>
+  <path d="M140 65 h18" class="s-edge" marker-end="url(#ar6)"/><path d="M260 65 h18" class="s-edge" marker-end="url(#ar6)"/><path d="M380 65 h18" class="s-edge" marker-end="url(#ar6)"/>
+
+  <!-- QUERY lane -->
+  <text x="30" y="140" class="s-cap">Query (online)</text>
+  <rect x="30" y="150" width="100" height="42" rx="6" class="s-box"/><text x="42" y="168" class="s-sub">user query</text><text x="42" y="182" class="s-sub"></text>
+  <rect x="150" y="150" width="110" height="42" rx="6" class="s-ox"/><text x="162" y="168" class="s-sub">transform:</text><text x="162" y="182" class="s-sub">rewrite/expand</text>
+  <rect x="280" y="150" width="110" height="42" rx="6" class="s-blue"/><text x="292" y="168" class="s-sub">retrieve</text><text x="292" y="182" class="s-sub">hybrid top-K</text>
+  <rect x="410" y="150" width="110" height="42" rx="6" class="s-ox"/><text x="422" y="168" class="s-sub">re-rank</text><text x="422" y="182" class="s-sub">cross-encoder</text>
+  <rect x="540" y="150" width="110" height="42" rx="6" class="s-box"/><text x="552" y="168" class="s-sub">assemble</text><text x="552" y="182" class="s-sub">context</text>
+  <rect x="670" y="150" width="110" height="42" rx="6" class="s-green"/><text x="682" y="168" class="s-sub">LLM</text><text x="682" y="182" class="s-sub">+ citations</text>
+  <path d="M130 171 h18" class="s-edge" marker-end="url(#ar6)"/><path d="M260 171 h18" class="s-edge" marker-end="url(#ar6)"/>
+  <path d="M390 171 h18" class="s-edge" marker-end="url(#ar6)"/><path d="M520 171 h18" class="s-edge" marker-end="url(#ar6)"/><path d="M650 171 h18" class="s-edge" marker-end="url(#ar6)"/>
+  <!-- index feeds retrieve -->
+  <path d="M460 86 C 460 118, 335 118, 335 148" class="s-edge-d" marker-end="url(#ar6)"/>
+
+  <!-- agentic loop -->
+  <text x="30" y="244" class="s-cap" fill="#1f4e6b">Agentic RAG adds a control loop</text>
+  <rect x="30" y="256" width="150" height="46" rx="6" class="s-box"/><text x="42" y="278" class="s-sub">assess: is context</text><text x="42" y="292" class="s-sub">sufficient &amp; grounded?</text>
+  <rect x="210" y="256" width="150" height="46" rx="6" class="s-box"/><text x="222" y="278" class="s-sub">if not → reformulate,</text><text x="222" y="292" class="s-sub">retrieve again / new tool</text>
+  <rect x="390" y="256" width="150" height="46" rx="6" class="s-green"/><text x="402" y="278" class="s-sub">if yes → answer</text><text x="402" y="292" class="s-sub">+ verify against source</text>
+  <path d="M180 279 h26" class="s-edge" marker-end="url(#ar6)"/>
+  <path d="M360 279 h26" class="s-edge" marker-end="url(#ar6)"/>
+  <path d="M285 302 C 285 330, 105 330, 105 303" class="s-edge-d" marker-end="url(#ar6)"/>
+  <text x="150" y="345" class="s-sub" font-size="9">loop until grounded or budget exhausted</text>
+  <defs><marker id="ar6" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#3c424e"/></marker></defs>
+</svg>

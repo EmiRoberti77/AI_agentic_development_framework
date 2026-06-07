@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 470" role="img" aria-label="The agentic AI stack diagram" width="820" height="470"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="470" fill="#fdfcf8"/>
+  <!-- safety wrapper -->
+  <rect x="8" y="8" width="804" height="454" rx="12" class="s-ox" fill="#fbf1ec"/>
+  <text x="24" y="30" class="s-cap" fill="#8a3324">Safety &amp; Trust Boundary — guardrails, eval, observability (Section 11)</text>
+
+  <!-- layers -->
+  <g>
+    <rect x="40" y="48" width="740" height="62" rx="8" class="s-blue"/>
+    <text x="58" y="76" class="s-lbl">① Experience / Interface</text>
+    <text x="58" y="94" class="s-sub">chat UI · API · IDE agent · workflow trigger · webhook</text>
+  </g>
+  <g>
+    <rect x="40" y="120" width="740" height="74" rx="8" class="s-box"/>
+    <text x="58" y="148" class="s-lbl">② Orchestration &amp; Control  —  the agent runtime</text>
+    <text x="58" y="166" class="s-sub">framework (LangGraph · CrewAI · Agents SDK) · state machine · planner · tool router</text>
+    <text x="58" y="183" class="s-sub">control flow: loops, retries, human-in-the-loop, multi-agent handoffs (Sections 8–9)</text>
+  </g>
+  <g>
+    <rect x="40" y="204" width="360" height="74" rx="8" class="s-box"/>
+    <text x="58" y="232" class="s-lbl">③ Reasoning primitives</text>
+    <text x="58" y="250" class="s-sub">prompts · structured outputs</text>
+    <text x="58" y="266" class="s-sub">tool/function calling (Section 7)</text>
+    <rect x="420" y="204" width="360" height="74" rx="8" class="s-box"/>
+    <text x="438" y="232" class="s-lbl">④ Memory &amp; Retrieval</text>
+    <text x="438" y="250" class="s-sub">RAG · GraphRAG · short/long-term</text>
+    <text x="438" y="266" class="s-sub">vector + graph stores (Sections 4–6)</text>
+  </g>
+  <g>
+    <rect x="40" y="288" width="740" height="64" rx="8" class="s-gold"/>
+    <text x="58" y="314" class="s-lbl">⑤ Data Layer — the source of truth</text>
+    <text x="58" y="332" class="s-sub">lakehouse · medallion (bronze/silver/gold) · semantic layer · feature store · data cubes (Section 3)</text>
+  </g>
+  <g>
+    <rect x="40" y="362" width="740" height="64" rx="8" class="s-green"/>
+    <text x="58" y="388" class="s-lbl">⑥ Foundation Models &amp; Inference</text>
+    <text x="58" y="406" class="s-sub">base / fine-tuned weights · LoRA adapters · serving (vLLM, managed API) · TTFT, throughput, $/token (Section 10)</text>
+  </g>
+  <!-- arrows -->
+  <path d="M410 110 v10" class="s-edge" marker-end="url(#ar)"/>
+  <path d="M410 194 v10" class="s-edge" marker-end="url(#ar)"/>
+  <path d="M410 278 v10" class="s-edge" marker-end="url(#ar)"/>
+  <path d="M410 352 v10" class="s-edge" marker-end="url(#ar)"/>
+  <defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#3c424e"/></marker></defs>
+</svg>

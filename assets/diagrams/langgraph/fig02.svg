@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Data flow through an LCEL RAG chain" width="760" height="250"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="760" height="250" fill="#fdfcf8"/>
+  <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#3c424e"/></marker></defs>
+  <rect x="14" y="104" width="92" height="42" rx="6" class="s-box"/>
+  <text x="60" y="123" text-anchor="middle" class="s-lbl">question</text>
+  <text x="60" y="138" text-anchor="middle" class="s-sub">str</text>
+
+  <rect x="150" y="60" width="150" height="44" rx="6" class="s-blue"/>
+  <text x="225" y="80" text-anchor="middle" class="s-lbl">retriever</text>
+  <text x="225" y="95" text-anchor="middle" class="s-sub">question → docs</text>
+  <rect x="150" y="146" width="150" height="44" rx="6" class="s-box"/>
+  <text x="225" y="166" text-anchor="middle" class="s-lbl">passthrough</text>
+  <text x="225" y="181" text-anchor="middle" class="s-sub">question → question</text>
+  <text x="225" y="40" text-anchor="middle" class="s-cap">RunnableParallel</text>
+
+  <rect x="344" y="104" width="116" height="42" rx="6" class="s-gold"/>
+  <text x="402" y="120" text-anchor="middle" class="s-lbl">.assign</text>
+  <text x="402" y="135" text-anchor="middle" class="s-sub">+word_count</text>
+
+  <rect x="498" y="104" width="104" height="42" rx="6" class="s-box"/>
+  <text x="550" y="120" text-anchor="middle" class="s-lbl">prompt|model</text>
+  <text x="550" y="135" text-anchor="middle" class="s-sub">dict → AIMessage</text>
+
+  <rect x="640" y="104" width="104" height="42" rx="6" class="s-green"/>
+  <text x="692" y="120" text-anchor="middle" class="s-lbl">parser</text>
+  <text x="692" y="135" text-anchor="middle" class="s-sub">→ str</text>
+
+  <path class="s-edge" marker-end="url(#ar2)" d="M106,118 L146,86"/>
+  <path class="s-edge" marker-end="url(#ar2)" d="M106,132 L146,166"/>
+  <path class="s-edge" marker-end="url(#ar2)" d="M300,82 L322,82 L322,120 L342,120"/>
+  <path class="s-edge" marker-end="url(#ar2)" d="M300,168 L322,168 L322,130 L342,130"/>
+  <path class="s-edge" marker-end="url(#ar2)" d="M460,125 L496,125"/>
+  <path class="s-edge" marker-end="url(#ar2)" d="M602,125 L638,125"/>
+</svg>

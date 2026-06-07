@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 520" role="img" aria-label="Full reference architecture" width="820" height="520"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="520" fill="#fdfcf8"/>
+  <rect x="6" y="6" width="808" height="508" rx="12" fill="#fbf1ec" stroke="#8a3324" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="22" y="28" class="s-cap" fill="#8a3324">Safety envelope: input/retrieval/output rails · tool gating · PII · eval · red-team</text>
+
+  <!-- experience -->
+  <rect x="30" y="40" width="200" height="44" rx="8" class="s-blue"/><text x="44" y="60" class="s-lbl">Client</text><text x="44" y="77" class="s-sub">chat · API · IDE · workflow</text>
+  <rect x="250" y="40" width="120" height="44" rx="8" class="s-ox"/><text x="262" y="60" class="s-lbl" font-size="11">Input rail</text><text x="262" y="77" class="s-sub">classify · PII</text>
+
+  <!-- orchestrator -->
+  <rect x="30" y="104" width="500" height="120" rx="10" class="s-box"/>
+  <text x="44" y="126" class="s-lbl">Orchestrator — LangGraph StateGraph (durable, checkpointed)</text>
+  <rect x="46" y="138" width="110" height="40" rx="6" class="s-blue"/><text x="58" y="162" class="s-sub">planner</text>
+  <rect x="170" y="138" width="110" height="40" rx="6" class="s-blue"/><text x="182" y="162" class="s-sub">reason agent</text>
+  <rect x="294" y="138" width="110" height="40" rx="6" class="s-gold"/><text x="306" y="158" class="s-sub">tool router</text><text x="306" y="171" class="s-sub">+ GATE</text>
+  <rect x="418" y="138" width="96" height="40" rx="6" class="s-green"/><text x="430" y="158" class="s-sub">human</text><text x="430" y="171" class="s-sub">review</text>
+  <text x="46" y="200" class="s-sub" font-size="9.5">cycle: reason → (gated) tool call → observe → repeat · state persisted each step → resume/audit</text>
+  <rect x="46" y="206" width="468" height="12" rx="3" fill="#efe9da" stroke="#c9c3b2"/>
+
+  <!-- checkpointer -->
+  <rect x="550" y="104" width="240" height="56" rx="8" class="s-gold"/><text x="564" y="126" class="s-lbl" font-size="12">Checkpointer (Postgres/Redis)</text><text x="564" y="144" class="s-sub">state · history · time-travel</text>
+  <rect x="550" y="168" width="240" height="56" rx="8" class="s-box"/><text x="564" y="190" class="s-lbl" font-size="12">Model serving</text><text x="564" y="208" class="s-sub">base + LoRA adapters · vLLM / API · tiered models</text>
+
+  <!-- retrieval -->
+  <text x="30" y="262" class="s-cap">Memory &amp; retrieval</text>
+  <rect x="30" y="272" width="120" height="46" rx="8" class="s-ox"/><text x="42" y="292" class="s-sub">query</text><text x="42" y="307" class="s-sub">transform</text>
+  <rect x="166" y="272" width="140" height="46" rx="8" class="s-blue"/><text x="178" y="292" class="s-sub">hybrid retrieve</text><text x="178" y="307" class="s-sub">vector + BM25</text>
+  <rect x="322" y="272" width="120" height="46" rx="8" class="s-blue"/><text x="334" y="292" class="s-sub">graph hops</text><text x="334" y="307" class="s-sub">(Neo4j)</text>
+  <rect x="458" y="272" width="120" height="46" rx="8" class="s-ox"/><text x="470" y="292" class="s-sub">re-rank</text><text x="470" y="307" class="s-sub">cross-encoder</text>
+  <rect x="594" y="272" width="196" height="46" rx="8" class="s-green"/><text x="606" y="292" class="s-sub">grounded answer</text><text x="606" y="307" class="s-sub">+ citations → output rail</text>
+  <path d="M150 295 h14" class="s-edge"/><path d="M306 295 h14" class="s-edge"/><path d="M442 295 h14" class="s-edge"/><path d="M578 295 h14" class="s-edge"/>
+
+  <!-- data layer -->
+  <text x="30" y="352" class="s-cap" fill="#9a7b25">Data layer (governed)</text>
+  <rect x="30" y="362" width="180" height="60" rx="8" class="s-gold"/><text x="42" y="384" class="s-lbl" font-size="11">Lakehouse · medallion</text><text x="42" y="402" class="s-sub">bronze→silver→gold</text>
+  <rect x="226" y="362" width="180" height="60" rx="8" class="s-gold"/><text x="238" y="384" class="s-lbl" font-size="11">Semantic layer</text><text x="238" y="402" class="s-sub">metrics · text-to-tool</text>
+  <rect x="422" y="362" width="180" height="60" rx="8" class="s-blue"/><text x="434" y="384" class="s-lbl" font-size="11">Vector store</text><text x="434" y="402" class="s-sub">+ embedding pipeline</text>
+  <rect x="618" y="362" width="172" height="60" rx="8" class="s-blue"/><text x="630" y="384" class="s-lbl" font-size="11">Knowledge graph</text><text x="630" y="402" class="s-sub">entities · relations</text>
+
+  <!-- observability -->
+  <rect x="30" y="440" width="760" height="44" rx="8" fill="#16202b"/>
+  <text x="44" y="462" fill="#d6e3ee" font-size="11" font-family="JetBrains Mono">Observability &amp; evals — tracing (LangSmith/Phoenix) · offline eval suite · online metrics · drift &amp; cost dashboards · CI gates</text>
+  <text x="44" y="478" fill="#8aa2b5" font-size="10" font-family="JetBrains Mono">"the eval pipeline + observability + failure recovery beat any framework choice"</text>
+
+  <!-- connectors -->
+  <path d="M230 62 h18" class="s-edge"/><path d="M280 84 v18" class="s-edge"/>
+  <path d="M404 224 C 404 244, 96 244, 90 270" class="s-edge-d"/>
+  <path d="M530 178 h18" class="s-edge"/>
+  <path d="M512 318 C 512 340, 512 350, 512 360" class="s-edge-d"/>
+</svg>

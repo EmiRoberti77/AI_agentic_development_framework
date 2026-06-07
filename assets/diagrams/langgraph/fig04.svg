@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three orchestration topologies" width="760" height="250"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="760" height="250" fill="#fdfcf8"/>
+  <defs><marker id="ar9" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#3c424e"/></marker></defs>
+  <!-- supervisor -->
+  <text x="120" y="24" text-anchor="middle" class="s-cap">Supervisor</text>
+  <rect x="80" y="36" width="80" height="34" rx="6" class="s-blue"/>
+  <text x="120" y="57" text-anchor="middle" class="s-lbl">super</text>
+  <rect x="20" y="120" width="64" height="30" rx="6" class="s-box"/><text x="52" y="140" text-anchor="middle" class="s-sub">w1</text>
+  <rect x="92" y="120" width="64" height="30" rx="6" class="s-box"/><text x="124" y="140" text-anchor="middle" class="s-sub">w2</text>
+  <rect x="164" y="120" width="64" height="30" rx="6" class="s-box"/><text x="196" y="140" text-anchor="middle" class="s-sub">w3</text>
+  <path class="s-edge" marker-end="url(#ar9)" d="M108,70 L60,118"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M120,70 L124,118"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M132,70 L188,118"/>
+  <path class="s-edge-d" marker-end="url(#ar9)" d="M60,120 L108,72"/>
+  <text x="120" y="175" text-anchor="middle" class="s-sub">workers report back</text>
+
+  <!-- network / swarm -->
+  <text x="380" y="24" text-anchor="middle" class="s-cap">Network / swarm</text>
+  <rect x="330" y="50" width="58" height="30" rx="6" class="s-gold"/><text x="359" y="70" text-anchor="middle" class="s-sub">A</text>
+  <rect x="430" y="50" width="58" height="30" rx="6" class="s-gold"/><text x="459" y="70" text-anchor="middle" class="s-sub">B</text>
+  <rect x="380" y="130" width="58" height="30" rx="6" class="s-gold"/><text x="409" y="150" text-anchor="middle" class="s-sub">C</text>
+  <path class="s-edge" marker-end="url(#ar9)" d="M388,62 L428,62"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M452,80 L420,128"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M388,140 L368,82"/>
+  <text x="409" y="185" text-anchor="middle" class="s-sub">peers hand off directly</text>
+
+  <!-- map-reduce -->
+  <text x="640" y="24" text-anchor="middle" class="s-cap">Map–reduce</text>
+  <rect x="600" y="36" width="80" height="30" rx="6" class="s-blue"/><text x="640" y="56" text-anchor="middle" class="s-sub">split</text>
+  <rect x="560" y="110" width="48" height="28" rx="6" class="s-box"/><text x="584" y="129" text-anchor="middle" class="s-sub">m</text>
+  <rect x="616" y="110" width="48" height="28" rx="6" class="s-box"/><text x="640" y="129" text-anchor="middle" class="s-sub">m</text>
+  <rect x="672" y="110" width="48" height="28" rx="6" class="s-box"/><text x="696" y="129" text-anchor="middle" class="s-sub">m</text>
+  <rect x="600" y="178" width="80" height="30" rx="6" class="s-green"/><text x="640" y="198" text-anchor="middle" class="s-sub">reduce</text>
+  <path class="s-edge" marker-end="url(#ar9)" d="M618,66 L588,108"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M640,66 L640,108"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M662,66 L692,108"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M588,138 L618,176"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M640,138 L640,176"/>
+  <path class="s-edge" marker-end="url(#ar9)" d="M692,138 L662,176"/>
+</svg>

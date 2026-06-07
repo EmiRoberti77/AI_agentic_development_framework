@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 320" role="img" aria-label="Defense in depth trust boundary diagram" width="820" height="320"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="320" fill="#fdfcf8"/>
+  <!-- trust boundary -->
+  <rect x="200" y="40" width="420" height="220" rx="12" fill="#eef3f6" stroke="#1f4e6b" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="210" y="60" class="s-cap">Trust boundary — inside, content is governed</text>
+
+  <!-- untrusted left -->
+  <text x="20" y="34" class="s-cap" fill="#8a3324">Untrusted</text>
+  <rect x="20" y="44" width="120" height="34" rx="6" class="s-box"/><text x="32" y="65" class="s-sub">user input</text>
+  <rect x="20" y="92" width="120" height="34" rx="6" class="s-ox"/><text x="32" y="113" class="s-sub">retrieved docs</text>
+  <rect x="20" y="140" width="120" height="34" rx="6" class="s-ox"/><text x="32" y="161" class="s-sub">tool / web output</text>
+
+  <!-- input rail -->
+  <rect x="156" y="60" width="34" height="160" rx="6" fill="#f6e9e4" stroke="#8a3324"/>
+  <text x="173" y="145" class="s-sub" font-size="10" transform="rotate(-90 173 145)">INPUT + RETRIEVAL RAIL</text>
+
+  <!-- core -->
+  <rect x="240" y="80" width="150" height="44" rx="8" class="s-blue"/><text x="252" y="100" class="s-lbl" font-size="11">System prompt</text><text x="252" y="116" class="s-sub">(no secrets)</text>
+  <rect x="240" y="140" width="150" height="44" rx="8" class="s-green"/><text x="252" y="160" class="s-lbl" font-size="11">LLM / agent</text><text x="252" y="176" class="s-sub">reason + decide</text>
+
+  <!-- tool gate -->
+  <rect x="430" y="80" width="160" height="44" rx="8" class="s-gold"/><text x="442" y="100" class="s-lbl" font-size="11">Tool-call GATE</text><text x="442" y="116" class="s-sub">scope · approve · allow-list</text>
+  <rect x="430" y="140" width="160" height="44" rx="8" class="s-box"/><text x="442" y="160" class="s-lbl" font-size="11">Tools / actions</text><text x="442" y="176" class="s-sub">least privilege</text>
+  <path d="M390 102 h36" class="s-edge" marker-end="url(#ar11)"/>
+  <path d="M390 162 C 410 162, 410 124, 428 110" class="s-edge-d"/>
+
+  <!-- output rail -->
+  <rect x="632" y="60" width="34" height="160" rx="6" fill="#f6e9e4" stroke="#8a3324"/>
+  <text x="649" y="140" class="s-sub" font-size="10" transform="rotate(-90 649 140)">OUTPUT RAIL</text>
+
+  <!-- consumer -->
+  <text x="700" y="34" class="s-cap" fill="#3f6f4a">Returned</text>
+  <rect x="690" y="92" width="110" height="56" rx="6" class="s-green"/><text x="702" y="116" class="s-sub">user / next</text><text x="702" y="132" class="s-sub">system</text>
+
+  <!-- flows through rails -->
+  <path d="M140 61 h14" class="s-edge"/><path d="M140 109 h14" class="s-edge"/><path d="M140 157 h14" class="s-edge"/>
+  <path d="M190 140 h48" class="s-edge" marker-end="url(#ar11)"/>
+  <path d="M590 102 h40" class="s-edge"/>
+  <path d="M666 120 h22" class="s-edge" marker-end="url(#ar11)"/>
+
+  <!-- observability base -->
+  <rect x="20" y="276" width="780" height="34" rx="6" fill="#16202b"/><text x="34" y="297" fill="#d6e3ee" font-size="11" font-family="JetBrains Mono">Observability &amp; eval everywhere: trace every step · log decisions · red-team (Garak/PyRIT) · monitor bypass &amp; false-positive rates</text>
+  <defs><marker id="ar11" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#3c424e"/></marker></defs>
+</svg>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 360" role="img" aria-label="Semantic vector space diagram" width="820" height="360"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="360" fill="#fdfcf8"/>
+  <rect x="8" y="8" width="804" height="344" rx="10" fill="#fdfcf8" stroke="#d8d3c4"/>
+  <!-- pipeline top -->
+  <g transform="translate(0,0)">
+    <rect x="30" y="30" width="120" height="40" rx="6" class="s-box"/><text x="44" y="55" class="s-lbl">"refund policy"</text>
+    <path d="M150 50 h26" class="s-edge" marker-end="url(#ar2)"/>
+    <rect x="178" y="30" width="110" height="40" rx="6" class="s-gold"/><text x="196" y="49" class="s-lbl" font-size="11">Embedding</text><text x="196" y="63" class="s-sub">model</text>
+    <path d="M288 50 h26" class="s-edge" marker-end="url(#ar2)"/>
+    <rect x="316" y="30" width="200" height="40" rx="6" class="s-box"/>
+    <text x="330" y="55" class="s-lbl" font-size="11">[0.12, -0.84, 0.05, … ] · dim 1536</text>
+  </g>
+  <text x="540" y="46" class="s-sub" font-size="11">A query and a document become</text>
+  <text x="540" y="60" class="s-sub" font-size="11">points; similarity = closeness.</text>
+
+  <!-- 2D projection plane -->
+  <g transform="translate(60,110)">
+    <line x1="0" y1="200" x2="540" y2="200" stroke="#c9c3b2"/>
+    <line x1="0" y1="200" x2="0" y2="10" stroke="#c9c3b2"/>
+    <text x="-6" y="222" class="s-sub">semantic space (2-D projection of 1536-D)</text>
+    <!-- clusters -->
+    <circle cx="120" cy="70" r="6" fill="#1f4e6b"/><text x="132" y="74" class="s-sub">"how do I get my money back"</text>
+    <circle cx="150" cy="95" r="6" fill="#1f4e6b"/><text x="162" y="99" class="s-sub">"return an item"</text>
+    <circle cx="100" cy="110" r="6" fill="#1f4e6b"/><text x="112" y="114" class="s-sub">"refund eligibility"</text>
+    <!-- query -->
+    <circle cx="135" cy="88" r="9" fill="none" stroke="#8a3324" stroke-width="2"/>
+    <text x="148" y="60" class="s-cap" fill="#8a3324" font-size="10">QUERY</text>
+    <circle cx="135" cy="88" r="58" fill="none" stroke="#8a3324" stroke-width="1.2" stroke-dasharray="4 4"/>
+    <!-- far cluster -->
+    <circle cx="420" cy="150" r="6" fill="#3f6f4a"/><text x="300" y="154" class="s-sub" text-anchor="end" font-size="10"></text>
+    <text x="432" y="154" class="s-sub">"shipping times"</text>
+    <circle cx="450" cy="120" r="6" fill="#3f6f4a"/><text x="462" y="124" class="s-sub">"track my package"</text>
+    <text x="360" y="195" class="s-sub" font-size="10">distant in meaning → low cosine similarity</text>
+  </g>
+  <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#3c424e"/></marker></defs>
+</svg>

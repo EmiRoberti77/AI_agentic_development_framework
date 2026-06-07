@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 320" role="img" aria-label="Four multi-agent orchestration patterns" width="820" height="320"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="320" fill="#fdfcf8"/>
+  <rect x="8" y="8" width="804" height="304" rx="10" fill="#fdfcf8" stroke="#d8d3c4"/>
+  <!-- 1 Sequential -->
+  <text x="30" y="34" class="s-cap">① Sequential (pipeline)</text>
+  <g>
+    <rect x="30" y="48" width="48" height="34" rx="6" class="s-blue"/><text x="54" y="69" text-anchor="middle" class="s-sub">A</text>
+    <rect x="108" y="48" width="48" height="34" rx="6" class="s-blue"/><text x="132" y="69" text-anchor="middle" class="s-sub">B</text>
+    <rect x="186" y="48" width="48" height="34" rx="6" class="s-blue"/><text x="210" y="69" text-anchor="middle" class="s-sub">C</text>
+    <path d="M78 65 h28" class="s-edge" marker-end="url(#ar9)"/><path d="M156 65 h28" class="s-edge" marker-end="url(#ar9)"/>
+  </g>
+  <text x="30" y="104" class="s-sub" font-size="9.5">output of each feeds the next · CrewAI sequential process</text>
+
+  <!-- 2 Hierarchical / supervisor -->
+  <text x="430" y="34" class="s-cap">② Hierarchical (supervisor)</text>
+  <g>
+    <rect x="540" y="44" width="80" height="32" rx="6" class="s-ox"/><text x="580" y="64" text-anchor="middle" class="s-sub">supervisor</text>
+    <rect x="450" y="100" width="56" height="30" rx="6" class="s-box"/><text x="478" y="119" text-anchor="middle" class="s-sub">worker</text>
+    <rect x="552" y="100" width="56" height="30" rx="6" class="s-box"/><text x="580" y="119" text-anchor="middle" class="s-sub">worker</text>
+    <rect x="654" y="100" width="56" height="30" rx="6" class="s-box"/><text x="682" y="119" text-anchor="middle" class="s-sub">worker</text>
+    <path d="M560 76 L478 100" class="s-edge" marker-end="url(#ar9)"/>
+    <path d="M580 76 L580 100" class="s-edge" marker-end="url(#ar9)"/>
+    <path d="M600 76 L682 100" class="s-edge" marker-end="url(#ar9)"/>
+  </g>
+  <text x="430" y="152" class="s-sub" font-size="9.5">router delegates &amp; aggregates · LangGraph, Google ADK tree</text>
+
+  <!-- 3 Handoff -->
+  <text x="30" y="190" class="s-cap">③ Handoff (peer transfer)</text>
+  <g>
+    <rect x="30" y="204" width="64" height="34" rx="6" class="s-green"/><text x="62" y="225" text-anchor="middle" class="s-sub">triage</text>
+    <rect x="150" y="204" width="64" height="34" rx="6" class="s-green"/><text x="182" y="225" text-anchor="middle" class="s-sub">billing</text>
+    <rect x="150" y="252" width="64" height="34" rx="6" class="s-green"/><text x="182" y="273" text-anchor="middle" class="s-sub">tech</text>
+    <path d="M94 218 L148 215" class="s-edge" marker-end="url(#ar9)"/>
+    <path d="M94 228 L148 262" class="s-edge" marker-end="url(#ar9)"/>
+    <text x="100" y="208" class="s-sub" font-size="8">transfer</text>
+  </g>
+  <text x="30" y="305" class="s-sub" font-size="9.5">agent passes control to a specialist · OpenAI Agents SDK</text>
+
+  <!-- 4 Conversational group -->
+  <text x="430" y="190" class="s-cap">④ Conversational group chat</text>
+  <g>
+    <circle cx="560" cy="240" r="40" fill="none" stroke="#c9c3b2" stroke-dasharray="3 3"/>
+    <rect x="540" y="200" width="44" height="26" rx="5" class="s-box"/><text x="562" y="217" text-anchor="middle" class="s-sub" font-size="9">A</text>
+    <rect x="600" y="232" width="44" height="26" rx="5" class="s-box"/><text x="622" y="249" text-anchor="middle" class="s-sub" font-size="9">B</text>
+    <rect x="500" y="232" width="44" height="26" rx="5" class="s-box"/><text x="522" y="249" text-anchor="middle" class="s-sub" font-size="9">C</text>
+    <rect x="540" y="262" width="44" height="26" rx="5" class="s-box"/><text x="562" y="279" text-anchor="middle" class="s-sub" font-size="9">D</text>
+  </g>
+  <text x="430" y="305" class="s-sub" font-size="9.5">shared thread, a selector picks who speaks · AutoGen / AG2</text>
+  <defs><marker id="ar9" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#3c424e"/></marker></defs>
+</svg>

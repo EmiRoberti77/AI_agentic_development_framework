@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg class="svg-fig" viewBox="0 0 820 320" role="img" aria-label="HNSW vs IVF index structures" width="820" height="320"><style>
+text,.svg-fig{font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+.s-box{fill:#fff;stroke:#1c1f26;stroke-width:1.5}
+.s-blue{fill:#e8eef2;stroke:#1f4e6b;stroke-width:1.5}
+.s-ox{fill:#f6e9e4;stroke:#8a3324;stroke-width:1.5}
+.s-gold{fill:#f1f0e2;stroke:#9a7b25;stroke-width:1.5}
+.s-green{fill:#e2efe5;stroke:#3f6f4a;stroke-width:1.5}
+.s-lbl{font-size:12px;fill:#1c1f26;font-weight:500}
+.s-sub{font-size:10px;fill:#6b7180}
+.s-edge{stroke:#3c424e;stroke-width:1.5;fill:none}
+.s-edge-d{stroke:#3c424e;stroke-width:1.4;fill:none;stroke-dasharray:5 4}
+.s-cap{font-size:10.5px;fill:#1f4e6b;letter-spacing:.08em}
+</style><rect x="0" y="0" width="820" height="320" fill="#fdfcf8"/>
+  <rect x="8" y="8" width="804" height="304" rx="10" fill="#fdfcf8" stroke="#d8d3c4"/>
+  <!-- HNSW -->
+  <text x="40" y="36" class="s-cap">HNSW — navigable layers</text>
+  <!-- layer 2 -->
+  <line x1="40" y1="70" x2="360" y2="70" stroke="#d8d3c4"/><text x="370" y="74" class="s-sub" font-size="9">L2 (sparse)</text>
+  <circle cx="80" cy="70" r="5" fill="#1f4e6b"/><circle cx="240" cy="70" r="5" fill="#1f4e6b"/>
+  <line x1="80" y1="70" x2="240" y2="70" class="s-edge"/>
+  <!-- layer 1 -->
+  <line x1="40" y1="130" x2="360" y2="130" stroke="#d8d3c4"/><text x="370" y="134" class="s-sub" font-size="9">L1</text>
+  <circle cx="80" cy="130" r="5" fill="#2f6f93"/><circle cx="160" cy="130" r="5" fill="#2f6f93"/><circle cx="240" cy="130" r="5" fill="#2f6f93"/><circle cx="310" cy="130" r="5" fill="#2f6f93"/>
+  <line x1="80" y1="130" x2="160" y2="130" class="s-edge"/><line x1="160" y1="130" x2="240" y2="130" class="s-edge"/><line x1="240" y1="130" x2="310" y2="130" class="s-edge"/>
+  <!-- layer 0 -->
+  <line x1="40" y1="200" x2="360" y2="200" stroke="#d8d3c4"/><text x="370" y="204" class="s-sub" font-size="9">L0 (dense, all)</text>
+  <g fill="#8aa2b5"><circle cx="70" cy="200" r="4"/><circle cx="110" cy="200" r="4"/><circle cx="150" cy="200" r="4"/><circle cx="190" cy="200" r="4"/><circle cx="230" cy="200" r="4"/><circle cx="270" cy="200" r="4"/><circle cx="310" cy="200" r="4"/></g>
+  <!-- descent path -->
+  <circle cx="240" cy="70" r="9" fill="none" stroke="#8a3324" stroke-width="2"/>
+  <path d="M240 79 v42" class="s-edge-d" stroke="#8a3324" marker-end="url(#ar3)"/>
+  <path d="M240 139 v52" class="s-edge-d" stroke="#8a3324" marker-end="url(#ar3)"/>
+  <text x="60" y="240" class="s-sub" font-size="10">enter at top → greedily descend → nearest neighbour at L0</text>
+  <text x="60" y="256" class="s-sub" font-size="10">O(log N) hops · incremental insert · memory-heavy</text>
+
+  <!-- IVF -->
+  <text x="470" y="36" class="s-cap">IVF — clustered cells</text>
+  <g>
+    <circle cx="540" cy="100" r="42" fill="#e8eef2" stroke="#2f6f93" stroke-dasharray="3 3"/>
+    <circle cx="650" cy="90" r="34" fill="#f6f3ea" stroke="#9a7b25" stroke-dasharray="3 3"/>
+    <circle cx="600" cy="180" r="40" fill="#f6e9e4" stroke="#8a3324" stroke-dasharray="3 3"/>
+    <circle cx="700" cy="170" r="30" fill="#e2efe5" stroke="#3f6f4a" stroke-dasharray="3 3"/>
+  </g>
+  <!-- centroids -->
+  <g><rect x="536" y="96" width="8" height="8" fill="#1f4e6b"/><rect x="646" y="86" width="8" height="8" fill="#9a7b25"/><rect x="596" y="176" width="8" height="8" fill="#8a3324"/><rect x="696" y="166" width="8" height="8" fill="#3f6f4a"/></g>
+  <!-- query -->
+  <circle cx="572" cy="130" r="7" fill="none" stroke="#1c1f26" stroke-width="2"/>
+  <text x="582" y="128" class="s-sub" font-size="9">query</text>
+  <text x="480" y="252" class="s-sub" font-size="10">probe only nearest cells (nprobe) · fast build</text>
+  <text x="480" y="268" class="s-sub" font-size="10">re-cluster on growth · pairs with PQ for billions</text>
+  <defs><marker id="ar3" markerWidth="8" markerHeight="8" refX="5.5" refY="4" orient="auto">
+    <path d="M0 0 L8 4 L0 8 z" fill="#8a3324"/></marker></defs>
+</svg>
